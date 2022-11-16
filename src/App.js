@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+import tania from './img/tania.jpg';
+import austin from './img/austin.jpg';
+import theresa from './img/theresa.jpg';
+
 import './App.css';
+import Card from './components/card/js/Card';
 
 function App() {
+  const userData = [
+    {
+      name: "Tania Ashmore",
+      age: 26,
+      gender: "Female",
+      balance: 250,
+      picture: tania,
+    },
+    {
+      name: "Austin Smith",
+      age: 28,
+      gender: "Male",
+      balance: 140,
+      picture: austin,
+    },
+    {
+      name: "Theresa Dawnson",
+      age: 30,
+      gender: "Female",
+      balance: 170,
+      picture: theresa,
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    userData.map((user) => {
+      return (
+        <Card name={user.name} age={user.age} gender={user.gender} balance={user.balance} picture={user.picture} />
+      )
+    })
   );
 }
 
